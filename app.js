@@ -37,7 +37,19 @@ function recorrerLista(){
     //Itera sobre el arreglo.
     for(let i = 0; i < amigos.length; i++){
         //Agrega elementos a la lista.
-        lista.innerHTML += `${i + 1}. ${amigos[i]}`;
+        lista.innerHTML += `${i + 1}. ${amigos[i]}<br>`;
     }
 }
 
+function sortearAmigo(){
+//Validar amigos disponibles.
+    if(amigos.length == 0){
+        alert('La lista de amigos no puede estar vacía.');
+        return;
+    }
+//Generar un índice aleatorio
+    let nombreAleatorio = Math.floor(Math.random() * amigos.length);
+//Obtener nombre sorteado.    
+    let sorteado = document.getElementById('resultado');
+    sorteado.innerHTML = amigos[nombreAleatorio];
+}
