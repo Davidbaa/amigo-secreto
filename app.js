@@ -24,7 +24,20 @@ function agregarAmigo() {
         alert(`Amigo '${nombres}' añadido a la lista.`);
         // Limpia el campo de entrada.
         document.getElementById("amigo").value = "";
+        recorrerLista()
     }
 }
 
+
+function recorrerLista(){
+    //Obtiene un elemento de la lista.
+    let lista = document.getElementById('listaAmigos');
+    //Limpia la lista existente.
+    lista.innerHTML = '';
+    //Itera sobre el arreglo.
+    for(let i = 0; i < amigos.length; i++){
+        //Agrega elementos a la lista.
+        lista.innerHTML += `${i + 1}. ${amigos[i]}`;
+    }
+}
 
